@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="19574" systemVersion="20G314" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="OwnerDO" representedClassName="OwnerDO" parentEntity="UserDO" syncable="YES">
+        <attribute name="foto" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="surname" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="UserDO" representedClassName="UserDO" syncable="YES">
+        <attribute name="userid" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="owner" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="OwnerDO"/>
+        <relationship name="vehicles" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="VehicleDO"/>
+    </entity>
+    <entity name="VehicleDO" representedClassName="VehicleDO" parentEntity="UserDO" syncable="YES">
+        <attribute name="color" optional="YES" attributeType="String"/>
+        <attribute name="foto" optional="YES" attributeType="String"/>
+        <attribute name="year" optional="YES" attributeType="String"/>
+        <attribute name="make" optional="YES" attributeType="String"/>
+        <attribute name="model" optional="YES" attributeType="String"/>
+        <attribute name="vehicleid" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="vin" optional="YES" attributeType="String"/>
+    </entity>
+    <elements>
+        <element name="UserDO" positionX="153.78076171875" positionY="199.1885375976562" width="128" height="88"/>
+        <element name="OwnerDO" positionX="50.81829833984375" positionY="78.77471923828125" width="128" height="88"/>
+        <element name="VehicleDO" positionX="265.4251098632812" positionY="17.28164672851562" width="128" height="148"/>
+    </elements>
+</model>
